@@ -8,5 +8,4 @@ describe DockingStation do
   it "it is an instance of the bike class" do
     expect(station.release_bike).to be_instance_of(Bike)
   end
-  
 end
