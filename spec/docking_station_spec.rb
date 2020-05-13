@@ -21,7 +21,7 @@ describe DockingStation do
     expect(bike).to be_instance_of(Bike)
   end
 
-  it " bike to be working? " do
+  it "bike to be working?" do
     expect(bike.working?).to be true
   end
 
