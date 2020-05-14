@@ -2,16 +2,9 @@ require 'docking_station'
 
 describe DockingStation do
   subject(:station) {DockingStation.new}
-  subject(:bike) {DockingStation.new.release_bike}
-  subject(:park) {DockingStation.new.dock(bike)}
-
-  it "respond to dock method" do
-    expect(station).to respond_to(:dock)
-  end
-
-  it "store the bike" do
-    expect(park).to eq(bike)
-  end
+  subject(:bike) {Bike.new}
+  #subject(:bike) {DockingStation.new.release_bike}
+  #subject(:park) {DockingStation.new.dock(bike)}
 
   it "responds to release_bike method" do
     expect(station).to respond_to(:release_bike)
@@ -24,5 +17,20 @@ describe DockingStation do
   it "bike to be working?" do
     expect(bike.working?).to be true
   end
+
+  it "respond to dock method" do
+    expect(station).to respond_to(:dock)
+  end
+
+  #it "store the bike" do
+   # station.dock(bike)
+   # expect(park).to eq(bike)
+  #end
+
+  it "store the bike" do
+    station.dock(bike)
+    expect(station.bike).to eq(bike)
+  end
+
 
 end
