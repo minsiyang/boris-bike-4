@@ -14,6 +14,7 @@ describe DockingStation do
   end
 
   it "responds to dock method" do
-    expect(station).to respond_to(:dock)
+    expect(station).to respond_to(:dock).with(1).argument
   end
+
 end
