@@ -9,7 +9,8 @@ describe DockingStation do
   end
 
   it "release working bikes" do
-    expect(station.release_bike).to eq(bike)
+    bike = station.release_bike
+    expect(bike).to be_working
   end
 
 end
