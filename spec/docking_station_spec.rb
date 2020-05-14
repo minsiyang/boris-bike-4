@@ -13,4 +13,7 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
+  it "responds to dock method" do
+    expect(station).to respond_to(:dock)
+  end
 end
