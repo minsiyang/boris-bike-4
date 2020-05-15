@@ -3,13 +3,17 @@ require 'docking_station'
 describe DockingStation do
   subject(:station) {DockingStation.new}
 
-  it "responds to release_bike method" do
-    expect(station).to respond_to(:release_bike)
-  end
+  describe '#release_bike' do
+    it "raises an error when no bike there" do
+      expect {station.release_bike}.to raise_error("No bikes avaliable")
+    end
 
-  it "release working bikes" do
-    bike = station.release_bike
-    expect(bike).to be_working
+    it "release a bike" do
+      bike = Bike.new
+      station.dock(bike)
+      expect(station.release_bike).to eq bike
+
+    end
   end
 
   it "responds to dock method" do
