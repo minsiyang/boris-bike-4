@@ -20,8 +20,6 @@ class DockingStation
     @bikes << bike
   end
  
-end
- 
 
 private
 
@@ -32,3 +30,4 @@ private
   def empty?
     @bikes.empty?
   end
+end
