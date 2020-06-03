@@ -52,3 +52,10 @@ I want a docking station to have a default capacity of 20 bikes.
 ```
 DockingStation <--initialize---> @bikes, @bikes.count >=20 to raise error
 
+```
+As a system maintainer,
+So that busy areas can be served more effectively,
+I want to be able to specify a larger capacity when necessary.
+```
+DockingStation <--initialize--> attr capacity
+
