@@ -27,13 +27,13 @@ describe DockingStation do
 
     it "doesn't realease a broken bike" do
       bike = double(:bike)
-      p bike 
       bike.report_broken
       expect {subject.release_bike }.to raise_error "No bike available"
     end
 
     it "release a working bike" do
       bike = double(:bike)
+      bike.working?
       subject.dock(bike)
       expect(subject.release_bike).to eq bike
     end
