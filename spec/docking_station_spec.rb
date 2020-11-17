@@ -2,13 +2,13 @@ require 'docking_station'
 
 RSpec.describe DockingStation do
 
-  let(:bike) { instance_double("Bike", working?: true ) }
+  let(:bike) { instance_double("Bike") }
 
   it "can release a working bike" do
     station = DockingStation.new
     station.dock(bike)
-    bike = station.release_bike
-    expect(bike).to be_working
+    expect(bike).to receive(:working?).and_return(true)
+    station.release_bike
   end
 
   it "can't release a bike when the station is empty" do
