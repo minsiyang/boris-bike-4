@@ -1,23 +1,16 @@
 # require_relative 'bike'
-# As a maintainer of the system,
-# So that I can control the distribution of bikes,
-# I'd like docking stations not to accept more bikes than their capacity.
-# ```
-# DockingStation <--dock(bike)--> raise error "Station is full"
-
-# ```
 # As a system maintainer,
-# So that I can plan the distribution of bikes,
-# I want a docking station to have a default capacity of 20 bikes.
+# So that busy areas can be served more effectively,
+# I want to be able to specify a larger capacity when necessary.
 
 class DockingStation
   attr_reader :bikes, :capacity
 
   DEFAULT_CAPACITY = 20
 
-  def initialize
+  def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
-    @capacity = DEFAULT_CAPACITY
+    @capacity = capacity
   end
 
   def release_bike

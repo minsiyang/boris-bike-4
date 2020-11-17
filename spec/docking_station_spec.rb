@@ -21,6 +21,12 @@ RSpec.describe DockingStation do
     20.times { station.dock(bike) }
     expect { station.dock(bike) }.to raise_error("Docking Station is FULL!")
   end
+
+  it "can have bigger capacity when required" do
+    station = DockingStation.new(50)
+    50.times { station.dock(bike) }
+    expect {station.dock(bike) }.to raise_error("Docking Station is FULL!")
+  end
   # describe 'initialize' do
   #   let(:bike) { double(:bike) }
 
