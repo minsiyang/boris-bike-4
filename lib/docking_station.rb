@@ -1,13 +1,15 @@
 # require_relative 'bike'
-# As a member of the public
-# So I can return bikes I've hired
-# I want to dock my bike at the docking station
+# As a member of the public,
+# So that I am not confused and charged unnecessarily,
+# I'd like docking stations not to release bikes when there are none available.
 # ```
-# DockingStation <--dock---> a Bike
+# DockingStation <--bike--> nil
+# DockingStation <--release_bike--> raise error "No bike available"
+
 # ```
-# As a member of the public
-# So I can decide whether to use the docking station
-# I want to see a bike that has been docked
+# As a maintainer of the system,
+# So that I can control the distribution of bikes,
+# I'd like docking stations not to accept more bikes than their capacity.
 
 class DockingStation
   attr_reader :bikes
@@ -17,7 +19,8 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
+    raise "There is no bike available!" if bikes.empty?
+    @bikes.pop
   end
 
   def dock(bike)
