@@ -1,10 +1,6 @@
 # Boris Bikes Challenges
 
-London's Boris Bikes (well, 'Santander Cycles') are awesome. Anyone can hire out a bike and ride it around London.
-
-Welcome to being a developer
-
-Let's go back several years, to the days when there were no Boris Bikes. Imagine that you're a junior developer (that was easy). Transport for London, the body responsible for delivery of a new bike system, come to you with a plan: a network of docking stations and bikes that anyone can use. They want you to build a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream a reality.
+ Build a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream a reality.
 
 ```
 As a person,
@@ -78,4 +74,14 @@ DockingStation <---release_bike----> raise error "No bike available"
 As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
+```
+
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
+
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to collect working bikes from garages and distribute them to docking stations.
 ```
