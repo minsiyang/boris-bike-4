@@ -6,6 +6,14 @@ RSpec.describe DockingStation do
     bike = station.release_bike
     expect(bike.working?).to be(true)
   end
+
+  it "can dock a bike" do
+    station = DockingStation.new
+    bike = Bike.new
+    station.dock(bike)
+    bike_hanger = [bike]
+    expect(station.bikes).to eq(bike_hanger)
+  end
   # describe 'initialize' do
   #   let(:bike) { double(:bike) }
 
