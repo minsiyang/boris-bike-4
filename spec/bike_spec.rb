@@ -6,9 +6,10 @@ describe Bike do
     expect(bike.working?).to be true
   end
 
-#   it 'can be reported broken' do
-#     subject.report_broken
-#     expect(subject).to be_broken
-#   end
+  it 'can be reported broken' do
+    bike = Bike.new
+    bike.report_broken
+    expect(bike).not_to be_working
+  end
 end
 

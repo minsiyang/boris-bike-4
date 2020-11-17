@@ -27,7 +27,8 @@ class DockingStation
 
   def release_bike
     raise "There is no bike available!" if empty?
-    bikes.pop.working?
+    raise "Can't release broken bike!" if broken?
+    bikes.pop
   end
 
   def dock(bike)
@@ -43,6 +44,10 @@ class DockingStation
 
   def full?
     bikes.length == capacity
+  end
+
+  def broken?
+    bikes.last.working? == false
   end
 #   DEFAULT_CAPACITY = 20
 
