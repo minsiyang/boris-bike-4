@@ -9,5 +9,7 @@ class Van
     @bikes += broken_bikes
   end
 
-  
+  def deliver_broken_bikes
+    @bikes.delete_if { |bike| bike.working? == false }
+  end
 end
