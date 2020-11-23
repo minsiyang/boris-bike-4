@@ -20,6 +20,10 @@ class DockingStation
     raise "Docking Station is FULL!" if full?
     bikes << bike
   end
+
+  def broken_bikes
+    bikes.select { |bike| bike.working? == false }
+  end
   
   private
 

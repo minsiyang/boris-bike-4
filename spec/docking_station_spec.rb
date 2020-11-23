@@ -35,4 +35,14 @@ RSpec.describe DockingStation do
     expect {station.dock(working_bike) }.to raise_error("Docking Station is FULL!")
   end
 
+  it "can return an array of broken bikes" do
+    station = DockingStation.new
+    expect(working_bike).to receive(:working?).and_return(true)
+    station.dock(working_bike)
+    station.dock(broken_bike)
+    station.dock(broken_bike)
+    broken_bikes = [broken_bike, broken_bike]
+    expect(station.broken_bikes).to eq(broken_bikes)
+  end
+
 end
